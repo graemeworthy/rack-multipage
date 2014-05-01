@@ -46,6 +46,10 @@ to change the path from /multipage to something else
 
     use Rack::MultiPage, route: "/something_else"
 
+That's maybe unclear: you set the route, and the pages as a configuration hash, so it would most likely look like this in your app.
+
+    use Rack::MultiPage, route: "/something_else", pages: ["/", "/users/1", "/login"]
+
 
 ## Contributing
 
