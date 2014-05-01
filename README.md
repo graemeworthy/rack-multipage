@@ -51,6 +51,17 @@ That's maybe unclear: you set the route, and the pages as a configuration hash, 
 
     use Rack::MultiPage, route: "/something_else", pages: ["/", "/users/1", "/login"]
 
+## Configuration
+
+Out of the box the pages are rendered as 50% thumbnails of 800 * 600 pages.
+
+here are the configuration variables
+
+ - height: default 800
+ - width: default 600
+ - percentage: default 50
+
+    use Rack::MultiPage, {height: 1200, percentage: 25,  pages: ["/", "/users/1", "/login"]}
 
 ## Contributing
 

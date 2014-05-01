@@ -13,11 +13,18 @@ class Rack::MultiPage
   attr_accessor :app
   attr_reader   :pages_list
   attr_reader   :route
+  attr_reader   :width
+  attr_reader   :height
+  attr_reader   :percentage
 
   def initialize (app, config = {})
     @app          = app
     @pages_list   = config.fetch :pages,  []
     @route        = config.fetch :route,  "/multipage"
+    @width        = config.fetch :width,  800
+    @height       = config.fetch :height, 600
+    @percentage   = config.fetch :percentage,  50
+
   end
 
   def call(env)
@@ -28,45 +35,49 @@ class Rack::MultiPage
     end
   end
 
+  def scale
+    percentage / 100.0
+  end
+
   def css
     <<-CSS
     body {
-      background-color: red;
+      background-color: #ccc;
       padding: 0; margin:0;
     }
+
     div.pageboxes {
       height: 100%;
-      width: 100p%;
+      width: 100%;
     }
 
     div.pageboxes .page {
-      height: 600px;
-      width: 800px;
+      height: #{height}px;
+      width:  #{width}px;
       border: solid 1px black;
       background-color: white;
       top: 0;
-      -webkit-transform: scale(0.5) ;
+      -webkit-transform: scale(#{scale}) ;
       -webkit-transform-origin: top left ;
       -webkit-box-shadow: 1px 1px 5px rgba(100,100,100,0.6)
     }
 
     div.pageboxes .box{
-      width: 400px;
-      height: 300px;
+      width: #{width * scale}px;
+      height: #{height * scale}px;
       margin-left: 10px;
       margin-top: 10px;
       float: left;
     }
+
     div.pageboxes .page iframe{
       height: 100%;
       width: 100%;
       border: solid 1px #eee;
       border-radius: 5px;
-
     }
+
     CSS
-
-
   end
 
   def template(insides)
