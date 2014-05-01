@@ -1,10 +1,10 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'rack_multipage/version'
+require 'rack-multipage/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "rack_multipage"
+  spec.name          = "rack-multipage"
   spec.version       = Rack::Multipage::VERSION
   spec.authors       = ["Graeme Worthy"]
   spec.email         = ["graeme@workben.ch"]
