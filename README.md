@@ -2,7 +2,10 @@
 
 Sometimes it's nice to see the effect of changes on multiple pages at once, like for example when you are editing css.
 
-This is a rack middleware that creates a page with multiple little-shrunken versions of other pages on it. Thumbnails, of them. These thumbnails are iFrames, and they've been shunken down with css.
+This is a rack middleware that creates a page with multiple little, shrunken-down versions of other pages on it. Thumbnails of them. These thumbnails are iFrames, and they've been shunken down with css.
+
+It works with any Rack app. Ruby on Rails is a Rack app, so it works with Rails.
+
 
 
 
