@@ -51,6 +51,19 @@ That's maybe unclear: you set the route, and the pages as a configuration hash, 
 
     use Rack::MultiPage, route: "/something_else", pages: ["/", "/users/1", "/login"]
 
+Two of them? sure! Just use different routes.
+
+    use Rack::MultiPage,
+      route: "/sales_pages",
+      pages: [ "/buy_it",
+               "/buy_it_now",
+               "/buy_it_please"]
+    use Rack::MultiPage,
+      route: "/preview_error_pages",
+      pages: [ "/500",
+               "/404",
+               "/410"]
+
 ## Configuration
 
 Out of the box the pages are rendered as 50% thumbnails of 800 * 600 pages.
