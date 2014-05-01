@@ -1,4 +1,5 @@
 # Rack::Multipage
+## It puts little thumbnails of other pages on a page.
 
 Sometimes it's nice to see the effect of changes on multiple pages at once, like for example when you are editing css.
 
