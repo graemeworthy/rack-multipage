@@ -1,4 +1,4 @@
-require "rack_multipage/version"
+require "rack-multipage/version"
 
 # Rack::MultiPage
 # sometimes it's nice to see the effect of changes on multiple pages at once.
@@ -31,10 +31,10 @@ class Rack::MultiPage
   def css
     <<-CSS
     body {
+      background-color: red;
       padding: 0; margin:0;
     }
     div.pageboxes {
-      background-color: #ccc;
       height: 100%;
       width: 100p%;
     }

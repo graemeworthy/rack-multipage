@@ -14,7 +14,7 @@ It works with any Rack app. Ruby on Rails is a Rack app, so it works with Rails.
 
 Add this line to your application's Gemfile:
 
-    gem 'rack_multipage'
+    gem 'rack-multipage'
 
 And then execute:
 
@@ -22,7 +22,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install rack_multipage
+    $ gem install rack-multipage
 
 ### If you are Using Rails
 
